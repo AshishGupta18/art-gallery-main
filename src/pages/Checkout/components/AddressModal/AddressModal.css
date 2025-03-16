@@ -1,74 +1,94 @@
+
+/* Apply box-sizing globally */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .address-modal-container {
   position: fixed;
   inset: 0;
   z-index: 6;
   background-color: rgba(0, 0, 0, 0.2);
-  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.address-modal-container .address-input-container {
-  position: absolute;
-  inset: 0;
-  background-color: rgb(255, 255, 255);
-  margin: auto;
-  width: 290px;
-  height: 520px;
-  text-align: center;
+.address-input-container {
+  background-color: #fff;
+  width: 90%;
+  max-width: 390px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
   border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .address-input-container h1 {
-  margin-top: 25px;
-  color: rgb(33, 33, 33);
-  margin-bottom: 25px;
+  color: #212121;
+  margin-bottom: 20px;
 }
 
-.address-modal-container .address-input-container input {
-  padding: 8px 16px;
-  display: block;
-  width: 90%;
-  margin: 12px auto;
-  border: 1px solid rgb(226, 226, 226);
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: none;
+}
+
+.input-container input {
+  padding: 10px 14px;
+  width: 100%;
+  border: 1px solid #e2e2e2;
   border-radius: 5px;
+  font-size: 0.95rem;
 }
 
-.address-modal-container .submit {
-  color: white;
+.input-container input:invalid {
+  border-color: red;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: -6px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+.submit {
   background-color: var(--primary-color);
+  color: white;
   font-weight: 600;
-  display: inline;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.address-modal-container .submit:hover {
-  cursor: pointer;
+.submit:hover {
   background-color: black;
 }
-.address-modal-container .btn-container {
+
+.btn-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 20px;
+  margin-top: 15px;
+  gap: 10px;
 }
 
-.address-modal-container .btn-container button {
+.btn-container button {
+  flex: 1;
+  padding: 10px;
   border: none;
-  padding: 8px 16px;
-
   border-radius: 5px;
-}
-
-.address-modal-container .btn-container button:hover {
+  background-color: var(--secondary-background-color);
+  transition: background-color 0.3s;
   cursor: pointer;
+}
+
+.btn-container button:hover {
   background-color: var(--secondary-background-color-onhover);
-}
-
-.address-modal-container .btn-container button:last-child {
-  flex-grow: 1;
-  margin-left: 10px;
-}
-
-@media (min-width: 768px) {
-  .address-modal-container .address-input-container{
-    width: 390px;
-  }
-
 }

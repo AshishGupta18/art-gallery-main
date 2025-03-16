@@ -28,11 +28,6 @@
   text-align: center;
 }
 
-.add-new-address-btn:hover {
-  cursor: pointer;
-  background: black;
-}
-
 .add-new-address-btn {
   border: none;
   padding: 8px 20px;
@@ -40,8 +35,43 @@
   margin-top: 10px;
   color: white;
   background: var(--primary-color);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+.add-new-address-btn:hover {
+  cursor: pointer;
+  background: black;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-new-address-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Pulse effect */
+.add-new-address-btn.pulsing {
+  animation: pulse 0.5s ease-in-out 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
 .address-btns {
   margin-top: 10px;
 }
